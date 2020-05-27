@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* See: https://www.infragistics.com/products/ignite-ui-angular/angular/components/themes.html */
+@import "~igniteui-angular/lib/core/styles/themes/index";
+
+$primary: #2d97e7 !default;
+$secondary: #eb2ae1 !default;
+
+$app-palette: igx-palette($primary, $secondary);
+
+@include igx-core();
+@include igx-theme($app-palette);
+
+html, body {
+  height: 100%;
+}
+.content p {
+  margin: 15px;
+}
+
+.validator__error > .error__icon, .validator__error > .error__text {
+  color: #da4843;
+  line-height: 24px;
+}
+
+.validator__error > .error__text {
+  font-weight: 600;
+}
+
+.validator__error > .error__icon {
+  width: 20%;
+  text-align: center;
+  font-weight: 400;
+}
+
+p.question__text, q-validator {
+  width: 100%;
+  font-weight: 600;
+}
+q-validator, q-multi, q-single {
+  display: block;
+  width: 100%;
+}

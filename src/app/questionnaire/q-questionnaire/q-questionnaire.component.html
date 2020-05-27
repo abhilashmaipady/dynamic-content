@@ -1,0 +1,19 @@
+<div class="questionnaire">
+    <div class='questionnaire__header'>
+      <h6><ng-content select="[qHeader]"></ng-content></h6>
+        <ng-content></ng-content>
+    </div>
+    <div class='questionnaire__body'>
+        <ng-container *ngFor="let question of questions">
+            <q-single *ngIf="question.type === 'single'" [question]="question">
+                <p qError>{{ error.single }}</p>
+            </q-single>
+            <q-multi *ngIf="question.type === 'multi'" [question]="question">
+                <p qError>{{ error.multi }}</p>
+            </q-multi>
+        </ng-container>
+    </div>
+    <div class='questionnaire__submit'>
+        <button igxButton [disabled]="!valid" (click)="submitResults()">Submit</button>
+    </div>
+</div>
